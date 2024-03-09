@@ -1,0 +1,12 @@
+name: nodejs
+
+services:
+  app:
+    build:
+      context: ./
+      target: develop
+      args:
+        DEV_PACKAGES: "${DEV_PACKAGES}"
+    env_file: ./conf/defaults.env
+    volumes:
+      - "./:/opt/app"
